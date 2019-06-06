@@ -1,0 +1,30 @@
+{
+    "name": "pandawan-technology/email-transformer",
+    "description": "Normalize email addresses to be used with symfony/mailer library",
+    "type": "library",
+    "require": {
+        "symfony/mime": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0",
+        "egulias/email-validator": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Xavier Coureau",
+            "email": "xavier@pandawan-technology.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "PandawanTechnology\\EmailTransformer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PandawanTechnology\\EmailTransformer\\Tests\\": "tests"
+        }
+    }
+}
