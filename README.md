@@ -35,7 +35,7 @@ class MyService
 ````
 
 ### Multiple Address / unknown
-In order to format a collection of email addresses (or an unknown quantity), the `transform` method ad shown below:
+In order to format a collection of email addresses (or an unknown quantity), the `transform` method is available as shown below:
 ```php
 <?php
 
@@ -62,4 +62,4 @@ class MyService
 ```
 
 ## Supported cases
-Those methods accepts strings, array of strings, (Named)Address instances, array of (Named)Address instances and mixed arrays. To get a better overview of supported inputs, you could find them in the `EmailAddressTransformerTest.php` test class.
+Those methods accept string(s), array of strings, (Named)Address instances, array of (Named)Address instances and mixed arrays. To get a better overview of supported inputs, you could find them in the `EmailAddressTransformerTest.php` test class file.
