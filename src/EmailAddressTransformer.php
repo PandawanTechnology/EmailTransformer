@@ -35,16 +35,10 @@ class EmailAddressTransformer
         $input = current($input);
 
         if (\is_string($input)) {
-            return \is_int($key) ? new Address($input) : new NamedAddress($input, $key);
+            return \is_int($key) ? new Address($input) : new NamedAddress($key, $input);
         }
 
-        if ($input instanceof NamedAddress) {
-            return $input;
-        }
-
-        // If a string has been provided as the key, we want to convert the Address object into a NamedAddress instance
-        // unless it is already one
-        return \is_int($key) ? $input : new NamedAddress($input->getAddress(), $key);
+        return $input;
     }
 
     /**

@@ -52,7 +52,7 @@ class EmailAddressTransformerTest extends TestCase
             ],
             // 3. An à-la swiftmailer array with one entry
             [
-                ['Testing is great' => 'test@test.com'],
+                ['test@test.com' => 'Testing is great'],
                 new NamedAddress('test@test.com', 'Testing is great')
             ],
             // 4. An array of strings
@@ -60,18 +60,18 @@ class EmailAddressTransformerTest extends TestCase
                 ['test@test.com', 'not-so-fancy@test.com'],
                 new Address('test@test.com')
             ],
-            // 4. An array containing an Address object as first value **SHOULD BE** overwritten.
+            // 4. An array containing an Address object as first value should remain unchanged
             [
                 [
-                    'Passing Master' => new Address('fake@test.com'),
+                    'devnull@test.com' => new Address('fake@test.com'),
                     'ignored@test.com'
                 ],
-                new NamedAddress('fake@test.com', 'Passing Master')
+                new Address('fake@test.com')
             ],
-            // 5. An array containing a NamedAddress object as first value **SHOULD NOT BE** overwritten.
+            // 5. An array containing a NamedAddress object as first value should remain unchanged
             [
                 [
-                    'Ignored Senor' => new NamedAddress('fake@test.com', 'Toto'),
+                    new NamedAddress('fake@test.com', 'Toto'),
                     'ignored-again@test.com'
                 ],
                 new NamedAddress('fake@test.com', 'Toto')
