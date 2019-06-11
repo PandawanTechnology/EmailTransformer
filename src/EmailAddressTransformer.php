@@ -54,6 +54,10 @@ class EmailAddressTransformer
     {
         $output = [];
 
+        if (!\is_iterable($input)) {
+            return [new Address($input)];
+        }
+
         foreach ($input as $nameCandidate => $addressCandidate) {
             $output[] = $this->transformUnique([$nameCandidate => $addressCandidate]);
         }
